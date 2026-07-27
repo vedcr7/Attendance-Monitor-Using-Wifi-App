@@ -8,7 +8,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Railway](https://img.shields.io/badge/Backend-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
 [![Android](https://img.shields.io/badge/Android-arm64--v8a-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](LICENSE)
 
 ---
 
@@ -376,7 +376,15 @@ node src/server.js
 
 ## 📄 License
 
-MIT License — free to use, modify, and distribute.
+**Proprietary — All Rights Reserved**
+
+Copyright © 2026 Vedaansh Gupta
+
+This software is the exclusive property of Vedaansh Gupta. Commercial use, redistribution, or modification without written permission is strictly prohibited.
+
+For licensing inquiries: **vedaanshgupta0405@gmail.com**
+
+See the [LICENSE](LICENSE) file for full terms.
 
 ---
 
