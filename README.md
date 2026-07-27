@@ -12,7 +12,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Railway](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](./LICENSE)
 
 <img src="https://img.shields.io/github/stars/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="stars"/>
 <img src="https://img.shields.io/github/forks/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="forks"/>
@@ -100,27 +100,26 @@
 
 ```mermaid
 flowchart TD
-    A[📶 Phone connects to WiFi] --> B["App reads BSSID every 3s<br/>(WifiManager + Kotlin native module)"]
-    B --> C{BSSID matches<br/>trusted router list?}
-    C -->|Yes| D[✅ PRESENT]
-    C -->|No| E[❌ NOT VERIFIED]
-    D --> F{Disconnected?}
-    F -->|"< 10 min"| G[Short break — ignored]
-    F -->|"< 20 min"| H[☕ Tea break]
-    F -->|"< 60 min"| I[🍽️ Lunch break]
-    F -->|"> 120 min"| J[🔴 AWAY — session ends]
-    G --> K[(📡 Railway Backend)]
-    H --> K
-    I --> K
-    J --> K
-    K --> L[📊 Admin real-time reports]
-
-    style D fill:#1e7e34,color:#fff
-    style E fill:#8b0000,color:#fff
-    style J fill:#c0392b,color:#fff
-    style H fill:#d68910,color:#fff
-    style I fill:#d68910,color:#fff
-    style K fill:#0B0D0E,color:#00C6FF
+A[📶 Phone connects to WiFi] --> B["App reads BSSID every 3s<br/>(WifiManager + Kotlin native module)"]
+B --> C{BSSID matches<br/>trusted router list?}
+C -->|Yes| D[✅ PRESENT]
+C -->|No| E[❌ NOT VERIFIED]
+D --> F{Disconnected?}
+F -->|"< 10 min"| G[Short break — ignored]
+F -->|"< 20 min"| H[☕ Tea break]
+F -->|"< 60 min"| I[🍽️ Lunch break]
+F -->|"> 120 min"| J[🔴 AWAY — session ends]
+G --> K[(📡 Railway Backend)]
+H --> K
+I --> K
+J --> K
+K --> L[📊 Admin real-time reports]
+style D fill:#1e7e34,color:#fff
+style E fill:#8b0000,color:#fff
+style J fill:#c0392b,color:#fff
+style H fill:#d68910,color:#fff
+style I fill:#d68910,color:#fff
+style K fill:#0B0D0E,color:#00C6FF
 ```
 
 ---
@@ -389,9 +388,11 @@ cd android
 ## 🌐 Deployment
 
 **Backend is live on Railway:**
+
 ```
 https://attendance-monitor-using-wifi-app-production.up.railway.app
 ```
+
 > ⚠️ Hosted on Railway's free trial — live and functional until the trial expires. Upgrade to the hobby plan ($5/mo) or self-host below to keep it running permanently.
 
 <details>
@@ -450,11 +451,25 @@ node src/server.js
 
 ## 📄 License
 
-MIT License — free to use, modify, and distribute.
+**© 2026 Vedaansh Gupta — All Rights Reserved**
+
+This software is the **exclusive intellectual property** of Vedaansh Gupta. It is made publicly visible for portfolio and educational purposes only.
+
+**The following are strictly prohibited without prior written permission:**
+- Commercial use or deployment in any organization
+- Redistribution or resale of source code or compiled binaries
+- Creating derivative products based on this codebase
+
+For licensing, collaboration, or commercial inquiries:
+
+📧 **vedaanshgupta0405@gmail.com**
+🐙 **[github.com/vedcr7](https://github.com/vedcr7)**
+
+See the full [LICENSE](LICENSE) file for legal terms.
+
+---
 
 <div align="center">
-
-<br/>
 
 **Built with ❤️ using React Native + Kotlin + Node.js**
 
