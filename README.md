@@ -13,11 +13,22 @@
 [![Railway](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
 
+<br/>
+
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-00C6FF?style=flat-square)
+![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen?style=flat-square)
 <img src="https://img.shields.io/github/stars/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="stars"/>
 <img src="https://img.shields.io/github/forks/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="forks"/>
 <img src="https://img.shields.io/github/last-commit/vedcr7/Attendance-Monitor-Using-Wifi-App?color=00C6FF&style=flat-square" alt="last commit"/>
-<img src="https://img.shields.io/badge/platform-Android-3DDC84?style=flat-square&logo=android&logoColor=white" alt="platform"/>
 
+</div>
+
+<br/>
+
+<div align="center">
+<img src="./assets/hero-mockup.svg" width="300" alt="WiFi Track live dashboard mockup — animated"/>
+<br/>
+<sub><i>Live status card — WiFi confirms the router, the ring tracks connected time, the bars pulse with signal.</i></sub>
 </div>
 
 <br/>
@@ -35,6 +46,10 @@
 | **Health Check** | [`/health`](https://attendance-monitor-using-wifi-app-production.up.railway.app/health) |
 
 ⚠️ *Running on Railway's free trial — self-host anytime using the guide below.*
+
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=vedcr7&repo=Attendance-Monitor-Using-Wifi-App&theme=tokyonight&hide_border=true&bg_color=0F2027&title_color=00C6FF&text_color=c9d1d9&icon_color=00C6FF" alt="repo card"/>
 
 </div>
 
@@ -57,6 +72,7 @@
 **Architecture**
 - [Attendance State Machine](#-attendance-state-machine)
 - [Auth Sequence](#-authentication-sequence)
+- [Codebase Composition](#-codebase-composition)
 - [Tech Stack](#-tech-stack)
 
 </td>
@@ -121,7 +137,7 @@ When a phone connects to a **trusted** BSSID, the app marks the employee **PRESE
 
 ## 🔄 Attendance State Machine
 
-This is the actual core logic — not a linear pipeline but a real state machine with timed transitions:
+The actual core logic — a real state machine with timed transitions, not a linear pipeline:
 
 ```mermaid
 stateDiagram-v2
@@ -176,6 +192,21 @@ sequenceDiagram
     U->>B: GET /api/auth/me (Bearer token)
     B-->>U: User session restored — no re-login
 ```
+
+---
+
+## 🥧 Codebase Composition
+
+```mermaid
+pie showData
+    title Where the Code Lives (by component)
+    "Mobile — TS/TSX" : 55
+    "Backend — Node/Express" : 30
+    "Native — Kotlin" : 10
+    "Config & Tooling" : 5
+```
+
+<sub><i>Approximate split by component responsibility, not a precise LOC audit.</i></sub>
 
 ---
 
@@ -252,6 +283,8 @@ sequenceDiagram
 </div>
 
 ---
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00C6FF,100:0F2027&height=4&width=100%25" width="100%"/>
 
 ## 🚀 Getting Started
 
@@ -493,16 +526,30 @@ node src/server.js
 
 ---
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FFB020,100:0F2027&height=4&width=100%25" width="100%"/>
+
 ## 🗺️ Roadmap
 
-- [ ] Real SMS OTP via Fast2SMS / Twilio
-- [ ] Admin live dashboard — real-time status for all employees
-- [ ] Multiple office location support
-- [ ] Geofencing as secondary verification layer
-- [ ] Monthly attendance summary PDF export
-- [ ] Push notifications for AWAY status
-- [ ] PostgreSQL migration for production scale
-- [ ] iOS support
+```mermaid
+gantt
+    title WiFi Track — Planned Milestones
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b
+    section Auth & Alerts
+    Real SMS OTP (Twilio/Fast2SMS)      :a1, 2026-08-01, 20d
+    Push notifications for AWAY status  :a2, after a1, 15d
+    section Admin Experience
+    Live admin dashboard                :b1, 2026-08-15, 25d
+    Multi-location support              :b2, after b1, 20d
+    section Platform Hardening
+    Geofencing (secondary verification) :c1, 2026-09-10, 15d
+    PostgreSQL migration                :c2, after c1, 20d
+    iOS support                         :c3, after c2, 30d
+    section Reporting
+    Monthly PDF export                  :d1, 2026-09-25, 15d
+```
+
+<sub><i>Illustrative timeline for planning purposes — not committed dates.</i></sub>
 
 ---
 
@@ -552,7 +599,7 @@ MIT License — free to use, modify, and distribute.
 
 **Built with ❤️ using React Native + Kotlin + Node.js**
 
-*WiFi Track — because attendance should be automatic.*
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&pause=1500&color=8FA3AD&center=true&vCenter=true&width=440&lines=Thanks+for+stopping+by+%E2%80%94+%E2%AD%90+it+if+it's+useful!" alt="footer typing" />
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C6FF,100:0F2027&height=100&section=footer" width="100%"/>
 
