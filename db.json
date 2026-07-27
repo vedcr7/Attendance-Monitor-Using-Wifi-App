@@ -1,0 +1,530 @@
+{
+  "employees": [
+    {
+      "id": "emp_001",
+      "name": "Admin User",
+      "email": "admin@company.com",
+      "phone": "9000000001",
+      "password": "$2a$10$.kgU7Qsj3ADnDq9Y7IYhEOPmSLylvPI5OEEfxcJlAKQFYe9lFhjoG",
+      "role": "ADMIN",
+      "department": "Management",
+      "is_active": true,
+      "created_at": "2026-07-23T07:02:34.341Z"
+    },
+    {
+      "id": "emp_002",
+      "name": "Alice Johnson",
+      "email": "alice@company.com",
+      "phone": "9000000002",
+      "password": "$2a$10$dguMpkcQnJGu7LSNqMY3O.DdkKS9g.gzBk0MXKJjkqLGiukujvcHq",
+      "role": "EMPLOYEE",
+      "department": "Engineering",
+      "is_active": true,
+      "created_at": "2026-07-23T07:02:34.341Z"
+    },
+    {
+      "id": "emp_003",
+      "name": "Bob Smith",
+      "email": "bob@company.com",
+      "phone": "9000000003",
+      "password": "$2a$10$dguMpkcQnJGu7LSNqMY3O.DdkKS9g.gzBk0MXKJjkqLGiukujvcHq",
+      "role": "EMPLOYEE",
+      "department": "Engineering",
+      "is_active": true,
+      "created_at": "2026-07-23T07:02:34.341Z"
+    },
+    {
+      "id": "emp_004",
+      "name": "Carol White",
+      "email": "carol@company.com",
+      "phone": "9000000004",
+      "password": "$2a$10$dguMpkcQnJGu7LSNqMY3O.DdkKS9g.gzBk0MXKJjkqLGiukujvcHq",
+      "role": "EMPLOYEE",
+      "department": "Design",
+      "is_active": true,
+      "created_at": "2026-07-23T07:02:34.341Z"
+    },
+    {
+      "id": "emp_005",
+      "name": "David Brown",
+      "email": "david@company.com",
+      "phone": "9000000005",
+      "password": "$2a$10$dguMpkcQnJGu7LSNqMY3O.DdkKS9g.gzBk0MXKJjkqLGiukujvcHq",
+      "role": "EMPLOYEE",
+      "department": "Sales",
+      "is_active": true,
+      "created_at": "2026-07-23T07:02:34.341Z"
+    },
+    {
+      "id": "emp_006",
+      "name": "mobile-demo",
+      "email": "mobile-demo@company.com",
+      "phone": "8009249577",
+      "password": "$2a$10$dguMpkcQnJGu7LSNqMY3O.DdkKS9g.gzBk0MXKJjkqLGiukujvcHq",
+      "role": "EMPLOYEE",
+      "department": "Sales",
+      "is_active": true,
+      "created_at": "2026-07-23T07:02:34.341Z"
+    }
+  ],
+  "trusted_routers": [
+    {
+      "id": 1,
+      "name": "Office Router Main",
+      "bssid": "AA:BB:CC:DD:EE:FF",
+      "location": "Ground Floor",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "Office Router Floor 1",
+      "bssid": "11:22:33:44:55:66",
+      "location": "First Floor",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "name": "Office Router Floor 2",
+      "bssid": "11:22:33:44:55:77",
+      "location": "Second Floor",
+      "is_active": true
+    }
+  ],
+  "attendance_records": [
+    {
+      "id": "rec_emp_002_20260723",
+      "employee_id": "emp_002",
+      "employee_name": "Alice Johnson",
+      "employee_email": "alice@company.com",
+      "date": "2026-07-23",
+      "session_start": "2026-07-23T09:00:00.000Z",
+      "session_end": "2026-07-23T17:00:00.000Z",
+      "connected_duration_ms": 28800000,
+      "total_break_ms": 3600000,
+      "break_count": 1,
+      "breaks": [],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.346Z",
+      "updated_at": "2026-07-23T07:11:30.989Z"
+    },
+    {
+      "id": "rec_emp_003_0",
+      "employee_id": "emp_003",
+      "employee_name": "Bob Smith",
+      "employee_email": "bob@company.com",
+      "date": "2026-07-23",
+      "session_start": "2026-07-23T03:45:00.000Z",
+      "session_end": "2026-07-23T12:59:00.000Z",
+      "connected_duration_ms": 23220000,
+      "total_break_ms": 1980000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_003_0",
+          "type": "LUNCH",
+          "durationMs": 1980000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.347Z",
+      "updated_at": "2026-07-23T07:02:34.347Z"
+    },
+    {
+      "id": "rec_emp_004_0",
+      "employee_id": "emp_004",
+      "employee_name": "Carol White",
+      "employee_email": "carol@company.com",
+      "date": "2026-07-23",
+      "session_start": "2026-07-23T03:49:00.000Z",
+      "session_end": "2026-07-23T13:10:00.000Z",
+      "connected_duration_ms": 22920000,
+      "total_break_ms": 2280000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_004_0",
+          "type": "LUNCH",
+          "durationMs": 2280000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.348Z",
+      "updated_at": "2026-07-23T07:02:34.348Z"
+    },
+    {
+      "id": "rec_emp_005_0",
+      "employee_id": "emp_005",
+      "employee_name": "David Brown",
+      "employee_email": "david@company.com",
+      "date": "2026-07-23",
+      "session_start": "2026-07-23T02:44:00.000Z",
+      "session_end": "2026-07-23T12:43:00.000Z",
+      "connected_duration_ms": 22740000,
+      "total_break_ms": 2460000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_005_0",
+          "type": "LUNCH",
+          "durationMs": 2460000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.349Z",
+      "updated_at": "2026-07-23T07:02:34.349Z"
+    },
+    {
+      "id": "rec_emp_002_1",
+      "employee_id": "emp_002",
+      "employee_name": "Alice Johnson",
+      "employee_email": "alice@company.com",
+      "date": "2026-07-22",
+      "session_start": "2026-07-22T02:33:00.000Z",
+      "session_end": "2026-07-22T13:04:00.000Z",
+      "connected_duration_ms": 22080000,
+      "total_break_ms": 3120000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_002_1",
+          "type": "LUNCH",
+          "durationMs": 3120000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.350Z",
+      "updated_at": "2026-07-23T07:02:34.350Z"
+    },
+    {
+      "id": "rec_emp_003_1",
+      "employee_id": "emp_003",
+      "employee_name": "Bob Smith",
+      "employee_email": "bob@company.com",
+      "date": "2026-07-22",
+      "session_start": "2026-07-22T02:38:00.000Z",
+      "session_end": "2026-07-22T12:34:00.000Z",
+      "connected_duration_ms": 21300000,
+      "total_break_ms": 3900000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_003_1",
+          "type": "LUNCH",
+          "durationMs": 3900000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.350Z",
+      "updated_at": "2026-07-23T07:02:34.350Z"
+    },
+    {
+      "id": "rec_emp_004_1",
+      "employee_id": "emp_004",
+      "employee_name": "Carol White",
+      "employee_email": "carol@company.com",
+      "date": "2026-07-22",
+      "session_start": "2026-07-22T03:34:00.000Z",
+      "session_end": "2026-07-22T13:00:00.000Z",
+      "connected_duration_ms": 22920000,
+      "total_break_ms": 2280000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_004_1",
+          "type": "LUNCH",
+          "durationMs": 2280000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.351Z",
+      "updated_at": "2026-07-23T07:02:34.351Z"
+    },
+    {
+      "id": "rec_emp_005_1",
+      "employee_id": "emp_005",
+      "employee_name": "David Brown",
+      "employee_email": "david@company.com",
+      "date": "2026-07-22",
+      "session_start": "2026-07-22T02:37:00.000Z",
+      "session_end": "2026-07-22T12:40:00.000Z",
+      "connected_duration_ms": 22680000,
+      "total_break_ms": 2520000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_005_1",
+          "type": "LUNCH",
+          "durationMs": 2520000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.351Z",
+      "updated_at": "2026-07-23T07:02:34.351Z"
+    },
+    {
+      "id": "rec_emp_002_2",
+      "employee_id": "emp_002",
+      "employee_name": "Alice Johnson",
+      "employee_email": "alice@company.com",
+      "date": "2026-07-21",
+      "session_start": "2026-07-21T03:53:00.000Z",
+      "session_end": "2026-07-21T13:01:00.000Z",
+      "connected_duration_ms": 22680000,
+      "total_break_ms": 2520000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_002_2",
+          "type": "LUNCH",
+          "durationMs": 2520000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.352Z",
+      "updated_at": "2026-07-23T07:02:34.352Z"
+    },
+    {
+      "id": "rec_emp_003_2",
+      "employee_id": "emp_003",
+      "employee_name": "Bob Smith",
+      "employee_email": "bob@company.com",
+      "date": "2026-07-21",
+      "session_start": "2026-07-21T03:34:00.000Z",
+      "session_end": "2026-07-21T13:22:00.000Z",
+      "connected_duration_ms": 21420000,
+      "total_break_ms": 3780000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_003_2",
+          "type": "LUNCH",
+          "durationMs": 3780000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.352Z",
+      "updated_at": "2026-07-23T07:02:34.352Z"
+    },
+    {
+      "id": "rec_emp_004_2",
+      "employee_id": "emp_004",
+      "employee_name": "Carol White",
+      "employee_email": "carol@company.com",
+      "date": "2026-07-21",
+      "session_start": "2026-07-21T02:38:00.000Z",
+      "session_end": "2026-07-21T13:11:00.000Z",
+      "connected_duration_ms": 20400000,
+      "total_break_ms": 4800000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_004_2",
+          "type": "LUNCH",
+          "durationMs": 4800000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.353Z",
+      "updated_at": "2026-07-23T07:02:34.353Z"
+    },
+    {
+      "id": "rec_emp_005_2",
+      "employee_id": "emp_005",
+      "employee_name": "David Brown",
+      "employee_email": "david@company.com",
+      "date": "2026-07-21",
+      "session_start": "2026-07-21T03:53:00.000Z",
+      "session_end": "2026-07-21T12:42:00.000Z",
+      "connected_duration_ms": 23160000,
+      "total_break_ms": 2040000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_005_2",
+          "type": "LUNCH",
+          "durationMs": 2040000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.354Z",
+      "updated_at": "2026-07-23T07:02:34.354Z"
+    },
+    {
+      "id": "rec_emp_002_3",
+      "employee_id": "emp_002",
+      "employee_name": "Alice Johnson",
+      "employee_email": "alice@company.com",
+      "date": "2026-07-20",
+      "session_start": "2026-07-20T02:42:00.000Z",
+      "session_end": "2026-07-20T12:40:00.000Z",
+      "connected_duration_ms": 20400000,
+      "total_break_ms": 4800000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_002_3",
+          "type": "LUNCH",
+          "durationMs": 4800000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.355Z",
+      "updated_at": "2026-07-23T07:02:34.355Z"
+    },
+    {
+      "id": "rec_emp_003_3",
+      "employee_id": "emp_003",
+      "employee_name": "Bob Smith",
+      "employee_email": "bob@company.com",
+      "date": "2026-07-20",
+      "session_start": "2026-07-20T02:30:00.000Z",
+      "session_end": "2026-07-20T13:01:00.000Z",
+      "connected_duration_ms": 21240000,
+      "total_break_ms": 3960000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_003_3",
+          "type": "LUNCH",
+          "durationMs": 3960000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.355Z",
+      "updated_at": "2026-07-23T07:02:34.355Z"
+    },
+    {
+      "id": "rec_emp_004_3",
+      "employee_id": "emp_004",
+      "employee_name": "Carol White",
+      "employee_email": "carol@company.com",
+      "date": "2026-07-20",
+      "session_start": "2026-07-20T03:49:00.000Z",
+      "session_end": "2026-07-20T12:36:00.000Z",
+      "connected_duration_ms": 21480000,
+      "total_break_ms": 3720000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_004_3",
+          "type": "LUNCH",
+          "durationMs": 3720000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.356Z",
+      "updated_at": "2026-07-23T07:02:34.356Z"
+    },
+    {
+      "id": "rec_emp_005_3",
+      "employee_id": "emp_005",
+      "employee_name": "David Brown",
+      "employee_email": "david@company.com",
+      "date": "2026-07-20",
+      "session_start": "2026-07-20T02:50:00.000Z",
+      "session_end": "2026-07-20T13:23:00.000Z",
+      "connected_duration_ms": 21660000,
+      "total_break_ms": 3540000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_005_3",
+          "type": "LUNCH",
+          "durationMs": 3540000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.356Z",
+      "updated_at": "2026-07-23T07:02:34.356Z"
+    },
+    {
+      "id": "rec_emp_002_4",
+      "employee_id": "emp_002",
+      "employee_name": "Alice Johnson",
+      "employee_email": "alice@company.com",
+      "date": "2026-07-19",
+      "session_start": "2026-07-19T02:58:00.000Z",
+      "session_end": "2026-07-19T12:34:00.000Z",
+      "connected_duration_ms": 22440000,
+      "total_break_ms": 2760000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_002_4",
+          "type": "LUNCH",
+          "durationMs": 2760000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.357Z",
+      "updated_at": "2026-07-23T07:02:34.357Z"
+    },
+    {
+      "id": "rec_emp_003_4",
+      "employee_id": "emp_003",
+      "employee_name": "Bob Smith",
+      "employee_email": "bob@company.com",
+      "date": "2026-07-19",
+      "session_start": "2026-07-19T02:42:00.000Z",
+      "session_end": "2026-07-19T12:56:00.000Z",
+      "connected_duration_ms": 22860000,
+      "total_break_ms": 2340000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_003_4",
+          "type": "LUNCH",
+          "durationMs": 2340000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.357Z",
+      "updated_at": "2026-07-23T07:02:34.357Z"
+    },
+    {
+      "id": "rec_emp_004_4",
+      "employee_id": "emp_004",
+      "employee_name": "Carol White",
+      "employee_email": "carol@company.com",
+      "date": "2026-07-19",
+      "session_start": "2026-07-19T03:46:00.000Z",
+      "session_end": "2026-07-19T13:13:00.000Z",
+      "connected_duration_ms": 23100000,
+      "total_break_ms": 2100000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_004_4",
+          "type": "LUNCH",
+          "durationMs": 2100000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.358Z",
+      "updated_at": "2026-07-23T07:02:34.358Z"
+    },
+    {
+      "id": "rec_emp_005_4",
+      "employee_id": "emp_005",
+      "employee_name": "David Brown",
+      "employee_email": "david@company.com",
+      "date": "2026-07-19",
+      "session_start": "2026-07-19T03:57:00.000Z",
+      "session_end": "2026-07-19T13:28:00.000Z",
+      "connected_duration_ms": 20520000,
+      "total_break_ms": 4680000,
+      "break_count": 1,
+      "breaks": [
+        {
+          "id": "b_emp_005_4",
+          "type": "LUNCH",
+          "durationMs": 4680000
+        }
+      ],
+      "status": "CONNECTED",
+      "created_at": "2026-07-23T07:02:34.359Z",
+      "updated_at": "2026-07-23T07:02:34.359Z"
+    }
+  ],
+  "otp_codes": []
+}
