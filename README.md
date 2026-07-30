@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:2C5364,100:00C6FF&height=230&section=header&text=WiFi%20Track&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Your%20Router%20Is%20Now%20Your%20Attendance%20Register&descAlignY=58&descSize=19" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:2C5364,100:00C6FF&height=230&section=header&text=Presence%IQ&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Your%20Router%20Is%20Now%20Your%20Attendance%20Register&descAlignY=58&descSize=19" width="100%"/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&pause=1200&color=00C6FF&center=true&vCenter=true&width=680&lines=No+manual+check-ins.+No+GPS+spoofing.;Connect+to+office+WiFi+%E2%86%92+marked+present.;BSSID+fingerprinting+%2B+a+real+state+machine." alt="Typing SVG" />
 
