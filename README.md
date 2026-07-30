@@ -1,21 +1,24 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:2C5364,100:00C6FF&height=220&section=header&text=WiFi%20Track&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Attendance%20That%20Happens%20Automatically&descAlignY=58&descSize=20" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:2C5364,100:00C6FF&height=230&section=header&text=WiFi%20Track&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Your%20Router%20Is%20Now%20Your%20Attendance%20Register&descAlignY=58&descSize=19" width="100%"/>
 
-<a href="https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00C6FF&center=true&vCenter=true&width=650&lines=No+manual+check-ins.+No+GPS+spoofing.;Just+connect+to+the+office+WiFi.;Your+router%2C+your+attendance+register." alt="Typing SVG" />
-</a>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&pause=1200&color=00C6FF&center=true&vCenter=true&width=680&lines=No+manual+check-ins.+No+GPS+spoofing.;Connect+to+office+WiFi+%E2%86%92+marked+present.;BSSID+fingerprinting+%2B+a+real+state+machine." alt="Typing SVG" />
 
-<br/>
+<br/><br/>
 
 [![React Native](https://img.shields.io/badge/React_Native-0.86.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactnative.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-Native_Module-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![Railway](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](./LICENSE)
 
 [![Download APK](https://img.shields.io/badge/⬇️_Download-Demo_APK_v1.0-brightgreen?style=for-the-badge&logo=android&logoColor=white)](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-debug.apk)
 
+<br/>
+
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-00C6FF?style=flat-square)
+![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen?style=flat-square)
 <img src="https://img.shields.io/github/stars/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="stars"/>
 <img src="https://img.shields.io/github/forks/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="forks"/>
 <img src="https://img.shields.io/github/last-commit/vedcr7/Attendance-Monitor-Using-Wifi-App?color=00C6FF&style=flat-square" alt="last commit"/>
@@ -24,7 +27,7 @@
 
 <br/>
 
-> **A React Native app that fingerprints your office WiFi router (BSSID) to automatically mark employees present, on break, or away — zero manual check-ins.**
+> **A React Native app that fingerprints your office router (BSSID) to automatically mark employees PRESENT, ON BREAK, or AWAY — no manual check-ins, no spoofable hotspot names, no GPS required.**
 
 <div align="center">
 
@@ -38,6 +41,8 @@
 
 ⚠️ *Running on Railway's free trial — self-host anytime using the guide below.*
 
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=vedcr7&repo=Attendance-Monitor-Using-Wifi-App&theme=tokyonight&hide_border=true&bg_color=0F2027&title_color=00C6FF&text_color=c9d1d9&icon_color=00C6FF" alt="repo card"/>
+
 </div>
 
 ---
@@ -46,28 +51,37 @@
 
 <table>
 <tr>
-<td valign="top" width="33%">
+<td valign="top" width="25%">
 
-- [🎯 Overview](#-overview)
-- [✨ Key Features](#-key-features)
-- [⚙️ How It Works](#️-how-it-works)
-- [🛠 Tech Stack](#-tech-stack)
-
-</td>
-<td valign="top" width="33%">
-
-- [📱 App Flow](#-app-flow)
-- [🚀 Getting Started](#-getting-started)
-- [📁 Project Structure](#-project-structure)
-- [🔌 API Endpoints](#-api-endpoints)
+**Concept**
+- [Overview](#-overview)
+- [Why WiFi, Not GPS or Biometrics](#-why-wifi-not-gps-or-biometrics)
+- [Key Features](#-key-features)
 
 </td>
-<td valign="top" width="33%">
+<td valign="top" width="25%">
 
-- [🔑 Demo Credentials](#-demo-credentials)
-- [🌐 Deployment](#-deployment)
-- [🗺️ Roadmap](#️-roadmap)
-- [🏗️ Permissions](#️-android-permissions-required)
+**Architecture**
+- [Attendance State Machine](#-attendance-state-machine)
+- [Auth Sequence](#-authentication-sequence)
+- [Tech Stack](#-tech-stack)
+
+</td>
+<td valign="top" width="25%">
+
+**Build & Run**
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [API Endpoints](#-api-endpoints)
+
+</td>
+<td valign="top" width="25%">
+
+**Ops**
+- [Security Notes](#-security-notes)
+- [Deployment](#-deployment)
+- [Roadmap](#️-roadmap)
+- [FAQ](#-faq)
 
 </td>
 </tr>
@@ -77,9 +91,23 @@
 
 ## 🎯 Overview
 
-**WiFi Track** eliminates manual attendance by using the **BSSID (MAC address) of your office router** as a unique identifier. When an employee's phone connects to a trusted router, they're marked **PRESENT** automatically. Disconnecting starts a grace timer — short breaks are tolerated, extended absence gets flagged.
+Most "smart" attendance systems rely on **GPS geofencing** (easily spoofed by mock-location apps) or **biometric hardware** (expensive, requires physical installation). WiFi Track takes a third path: it identifies the **BSSID — the hardware MAC address of the office router itself** — as the trust anchor.
 
-> 💡 **Why BSSID instead of SSID?** Anyone can name a hotspot `Office_WiFi`. A BSSID is the physical access point's hardware MAC address — unique per device and extremely difficult to spoof.
+> 💡 **Why BSSID instead of SSID?** Anyone can rename a personal hotspot `Office_WiFi`. A BSSID is burned into the access point's hardware. It can't be renamed, and spoofing it requires cloning a physical device's MAC — a meaningfully higher bar than typing a network name.
+
+When a phone connects to a **trusted** BSSID, the app marks the employee **PRESENT**. Disconnection doesn't instantly flag someone absent — it starts a **grace-period timer**, because someone walking to the printer or stepping out for lunch isn't "away."
+
+---
+
+## ⚖️ Why WiFi, Not GPS or Biometrics
+
+| | GPS Geofencing | Biometric Scanner | 📡 WiFi Track |
+|---|:---:|:---:|:---:|
+| Spoofable with a free app | ❌ Yes (mock location) | ✅ No | ✅ No |
+| Hardware cost | Free | 💰 ₹15k–50k/unit | Free (uses existing router) |
+| Works indoors reliably | ❌ Poor | ✅ Yes | ✅ Yes |
+| Requires employee action | ✅ None | ❌ Must walk up & scan | ✅ None (automatic) |
+| Tracks precise break duration | ❌ No | ❌ No | ✅ Yes, with auto-classification |
 
 ---
 
@@ -89,39 +117,58 @@
 
 | | | |
 |:---:|:---:|:---:|
-| 🔐 **Smart Authentication**<br/>Email/password + Phone OTP | 📡 **Real-time Monitoring**<br/>3s polling — SSID, BSSID, RSSI | 🏢 **Router Verification**<br/>BSSID matched against whitelist |
-| ⏱️ **State Machine**<br/>PRESENT → BREAK → AWAY | ☕ **Break Classification**<br/>Short / Tea / Lunch / Extended | 📊 **Attendance Reports**<br/>Session time, breaks, duration |
+| 🔐 **Smart Auth**<br/>Email/password + Phone OTP | 📡 **Real-time Monitoring**<br/>3s polling — SSID, BSSID, RSSI, freq | 🏢 **Router Verification**<br/>BSSID vs. admin-managed whitelist |
+| ⏱️ **State Machine**<br/>PRESENT → BREAK → AWAY | ☕ **Break Classification**<br/>Short / Tea / Lunch / Extended | 📊 **Attendance Reports**<br/>Session time, break count, duration |
 | 📤 **CSV Export**<br/>Share via email/WhatsApp | 👥 **Employee Management**<br/>Admin CRUD on backend | 📱 **Session Persistence**<br/>Survives app kills |
-| 🔄 **Auto-login**<br/>Encrypted JWT storage | 🌐 **Cloud Backend**<br/>REST API, no PC required | 🇮🇳 **Built for Real Offices**<br/>Grace periods, no false flags |
+| 🔄 **Auto-login**<br/>Encrypted JWT storage | 🌐 **Cloud Backend**<br/>REST API, works without a PC running | 🛡️ **Anti-spoof by Design**<br/>Hardware MAC, not a network name |
 
 </div>
 
 ---
 
-## ⚙️ How It Works
+## 🔄 Attendance State Machine
 
 ```mermaid
-flowchart TD
-A[📶 Phone connects to WiFi] --> B["App reads BSSID every 3s<br/>(WifiManager + Kotlin native module)"]
-B --> C{BSSID matches<br/>trusted router list?}
-C -->|Yes| D[✅ PRESENT]
-C -->|No| E[❌ NOT VERIFIED]
-D --> F{Disconnected?}
-F -->|"< 10 min"| G[Short break — ignored]
-F -->|"< 20 min"| H[☕ Tea break]
-F -->|"< 60 min"| I[🍽️ Lunch break]
-F -->|"> 120 min"| J[🔴 AWAY — session ends]
-G --> K[(📡 Railway Backend)]
-H --> K
-I --> K
-J --> K
-K --> L[📊 Admin real-time reports]
-style D fill:#1e7e34,color:#fff
-style E fill:#8b0000,color:#fff
-style J fill:#c0392b,color:#fff
-style H fill:#d68910,color:#fff
-style I fill:#d68910,color:#fff
-style K fill:#0B0D0E,color:#00C6FF
+stateDiagram-v2
+  [*] --> DISCONNECTED
+  DISCONNECTED --> VERIFYING: WiFi connects
+  VERIFYING --> PRESENT: BSSID in trusted list
+  VERIFYING --> NOT_VERIFIED: BSSID unknown
+  PRESENT --> SHORT_BREAK: disconnects
+  SHORT_BREAK --> PRESENT: reconnects < 10 min
+  SHORT_BREAK --> TEA_BREAK: still gone at 10 min
+  TEA_BREAK --> PRESENT: reconnects < 20 min
+  TEA_BREAK --> LUNCH_BREAK: still gone at 20 min
+  LUNCH_BREAK --> PRESENT: reconnects < 60 min
+  LUNCH_BREAK --> AWAY: still gone at 60 min
+  AWAY --> [*]: session ends, logged
+  NOT_VERIFIED --> DISCONNECTED: WiFi drops
+  NOT_VERIFIED --> PRESENT: connects to trusted router
+```
+
+Every transition is timestamped and pushed to the backend — an admin's report is a full timeline of connect/disconnect events per employee, per day.
+
+---
+
+## 🔐 Authentication Sequence
+
+```mermaid
+sequenceDiagram
+  participant U as 📱 Employee App
+  participant A as 🔑 Auth Service
+  participant B as 🖥️ Backend API
+  participant S as 🔒 EncryptedStorage
+
+  U->>A: Email + Password (or Phone OTP)
+  A->>B: POST /api/auth/login
+  B-->>A: JWT token
+  A->>S: Store token (encrypted)
+  A-->>U: Login success
+  Note over U,B: On every subsequent app launch
+  U->>S: Read stored JWT
+  S-->>U: Token found
+  U->>B: GET /api/auth/me (Bearer token)
+  B-->>U: User session restored — no re-login
 ```
 
 ---
@@ -139,8 +186,8 @@ style K fill:#0B0D0E,color:#00C6FF
 **Backend & Infra**
 
 ![Node.js](https://skillicons.dev/icons?i=nodejs)
-![Express](https://skillicons.dev/icons?i=express)
-![Railway](https://skillicons.dev/icons?i=railway)
+![JavaScript](https://skillicons.dev/icons?i=js)
+![Git](https://skillicons.dev/icons?i=git)
 
 </div>
 
@@ -237,6 +284,11 @@ export const API_BASE_URL = 'http://192.168.1.X:3000';
 ### Run
 
 ```bash
+# Bundle JS first (required for standalone APK)
+npx react-native bundle --platform android --dev false --entry-file index.js \
+  --bundle-output android/app/src/main/assets/index.android.bundle \
+  --assets-dest android/app/src/main/res
+
 # Start Metro bundler
 npx react-native start
 
@@ -244,7 +296,7 @@ npx react-native start
 npx react-native run-android
 ```
 
-### Build a debug APK
+### Build a standalone APK
 
 ```bash
 cd android
@@ -252,6 +304,8 @@ cd android
 ```
 
 📦 Output: `android/app/build/outputs/apk/debug/app-debug.apk`
+
+> ⬇️ Or just **[download the pre-built demo APK](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-debug.apk)** directly.
 
 ---
 
@@ -387,6 +441,24 @@ cd android
 
 ---
 
+## 🛡️ Security Notes
+
+<div align="center">
+
+| Concern | How it's handled |
+|---|---|
+| **BSSID spoofing** | Requires cloning a physical device's hardware MAC — far higher bar than renaming an SSID |
+| **Token theft** | JWTs live in `EncryptedStorage` (Android Keystore-backed), not plain AsyncStorage |
+| **Password storage** | Hashed with `bcryptjs`, never stored or logged in plaintext |
+| **Location permission scope** | Required by Android to read WiFi SSID/BSSID — the app does **not** collect or transmit GPS coordinates |
+| **API authorization** | All non-auth routes require a valid Bearer JWT, verified server-side per request |
+
+> ⚠️ **Known gap:** the current demo backend uses `db.json` as its database — fine for a prototype, but the [Roadmap](#️-roadmap) includes a PostgreSQL migration before production use.
+
+</div>
+
+---
+
 ## 🌐 Deployment
 
 **Backend is live on Railway:**
@@ -395,7 +467,7 @@ cd android
 https://attendance-monitor-using-wifi-app-production.up.railway.app
 ```
 
-> ⚠️ Hosted on Railway's free trial — live and functional until the trial expires. Upgrade to the hobby plan ($5/mo) or self-host below to keep it running permanently.
+> ⚠️ Hosted on Railway's free trial — live and functional until the trial expires. Upgrade to the hobby plan ($5/mo) or self-host below.
 
 <details>
 <summary><b>🖥️ Self-host the backend</b></summary>
@@ -426,14 +498,24 @@ node src/server.js
 
 ## 🗺️ Roadmap
 
-- [ ] Real SMS OTP via Fast2SMS / Twilio
-- [ ] Admin live dashboard — real-time status for all employees
-- [ ] Multiple office location support
-- [ ] Geofencing as secondary verification layer
-- [ ] Monthly attendance summary PDF export
-- [ ] Push notifications for AWAY status
-- [ ] PostgreSQL migration for production scale
-- [ ] iOS support
+```mermaid
+gantt
+  title WiFi Track — Planned Milestones
+  dateFormat  YYYY-MM-DD
+  axisFormat  %b
+  section Auth & Alerts
+    Real SMS OTP (Twilio/Fast2SMS)      :a1, 2026-08-01, 20d
+    Push notifications for AWAY status  :a2, after a1, 15d
+  section Admin Experience
+    Live admin dashboard                :b1, 2026-08-15, 25d
+    Multi-location support              :b2, after b1, 20d
+  section Platform Hardening
+    Geofencing (secondary verification) :c1, 2026-09-10, 15d
+    PostgreSQL migration                :c2, after c1, 20d
+    iOS support                         :c3, after c2, 30d
+  section Reporting
+    Monthly PDF export                  :d1, 2026-09-25, 15d
+```
 
 ---
 
@@ -451,23 +533,37 @@ node src/server.js
 
 ---
 
+## ❓ FAQ
+
+<details>
+<summary><b>What happens if two office locations use the same router brand?</b></summary>
+<br/>
+BSSIDs are unique per physical hardware unit — no two routers, even the same model bought on the same day, share a MAC address. Whitelisting is per-BSSID, not per-brand.
+</details>
+
+<details>
+<summary><b>Can an employee fake presence by connecting from home?</b></summary>
+<br/>
+No — unlike GPS, there's nothing to spoof remotely. The device has to actually associate with the physical access point's radio, which only happens within real WiFi range of the office.
+</details>
+
+<details>
+<summary><b>Does the app drain battery from constant polling?</b></summary>
+<br/>
+The 3-second poll only reads already-cached WiFi state via the native Kotlin module — it doesn't trigger new radio scans, so the drain is comparable to leaving WiFi on, not to active scanning.
+</details>
+
+---
+
 ## 📄 License
 
 **© 2026 Vedaansh Gupta — All Rights Reserved**
 
-This software is the **exclusive intellectual property** of Vedaansh Gupta. It is made publicly visible for portfolio and educational purposes only.
+This software is the exclusive intellectual property of Vedaansh Gupta. Commercial use, redistribution, or modification without prior written permission is strictly prohibited.
 
-**The following are strictly prohibited without prior written permission:**
-- Commercial use or deployment in any organization
-- Redistribution or resale of source code or compiled binaries
-- Creating derivative products based on this codebase
+For licensing inquiries: **vedaanshgupta0405@gmail.com** · [github.com/vedcr7](https://github.com/vedcr7)
 
-For licensing, collaboration, or commercial inquiries:
-
-📧 **vedaanshgupta0405@gmail.com**
-🐙 **[github.com/vedcr7](https://github.com/vedcr7)**
-
-See the full [LICENSE](LICENSE) file for legal terms.
+See the full [LICENSE](./LICENSE) file for legal terms.
 
 ---
 
@@ -475,7 +571,7 @@ See the full [LICENSE](LICENSE) file for legal terms.
 
 **Built with ❤️ using React Native + Kotlin + Node.js**
 
-*WiFi Track — because attendance should be automatic.*
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&pause=1500&color=8FA3AD&center=true&vCenter=true&width=440&lines=Thanks+for+stopping+by+%E2%80%94+%E2%AD%90+it+if+it's+useful!" alt="footer typing" />
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C6FF,100:0F2027&height=100&section=footer" width="100%"/>
 
