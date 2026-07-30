@@ -11,7 +11,9 @@
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-Native_Module-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![Railway](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](./LICENSE)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](./LICENSE)
+
+[![Download APK](https://img.shields.io/badge/⬇️_Download-Demo_APK_v1.0-brightgreen?style=for-the-badge&logo=android&logoColor=white)](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-debug.apk)
 
 <br/>
 
@@ -21,14 +23,6 @@
 <img src="https://img.shields.io/github/forks/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="forks"/>
 <img src="https://img.shields.io/github/last-commit/vedcr7/Attendance-Monitor-Using-Wifi-App?color=00C6FF&style=flat-square" alt="last commit"/>
 
-</div>
-
-<br/>
-
-<div align="center">
-<img src="./assets/hero-mockup.svg" width="300" alt="WiFi Track live dashboard mockup — animated"/>
-<br/>
-<sub><i>Live status card — WiFi confirms the router, the ring tracks connected time, the bars pulse with signal.</i></sub>
 </div>
 
 <br/>
@@ -46,8 +40,6 @@
 | **Health Check** | [`/health`](https://attendance-monitor-using-wifi-app-production.up.railway.app/health) |
 
 ⚠️ *Running on Railway's free trial — self-host anytime using the guide below.*
-
-<br/>
 
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=vedcr7&repo=Attendance-Monitor-Using-Wifi-App&theme=tokyonight&hide_border=true&bg_color=0F2027&title_color=00C6FF&text_color=c9d1d9&icon_color=00C6FF" alt="repo card"/>
 
@@ -72,7 +64,6 @@
 **Architecture**
 - [Attendance State Machine](#-attendance-state-machine)
 - [Auth Sequence](#-authentication-sequence)
-- [Codebase Composition](#-codebase-composition)
 - [Tech Stack](#-tech-stack)
 
 </td>
@@ -90,6 +81,7 @@
 - [Security Notes](#-security-notes)
 - [Deployment](#-deployment)
 - [Roadmap](#️-roadmap)
+- [FAQ](#-faq)
 
 </td>
 </tr>
@@ -99,7 +91,7 @@
 
 ## 🎯 Overview
 
-Most "smart" attendance systems rely on **GPS geofencing** (easily spoofed by mock-location apps) or **biometric hardware** (expensive, requires physical installation, and still needs someone to walk up and scan). WiFi Track takes a third path: it identifies the **BSSID — the hardware MAC address of the office router itself** — as the trust anchor.
+Most "smart" attendance systems rely on **GPS geofencing** (easily spoofed by mock-location apps) or **biometric hardware** (expensive, requires physical installation). WiFi Track takes a third path: it identifies the **BSSID — the hardware MAC address of the office router itself** — as the trust anchor.
 
 > 💡 **Why BSSID instead of SSID?** Anyone can rename a personal hotspot `Office_WiFi`. A BSSID is burned into the access point's hardware. It can't be renamed, and spoofing it requires cloning a physical device's MAC — a meaningfully higher bar than typing a network name.
 
@@ -113,10 +105,9 @@ When a phone connects to a **trusted** BSSID, the app marks the employee **PRESE
 |---|:---:|:---:|:---:|
 | Spoofable with a free app | ❌ Yes (mock location) | ✅ No | ✅ No |
 | Hardware cost | Free | 💰 ₹15k–50k/unit | Free (uses existing router) |
-| Works indoors reliably | ❌ Poor (multi-floor buildings) | ✅ Yes | ✅ Yes |
+| Works indoors reliably | ❌ Poor | ✅ Yes | ✅ Yes |
 | Requires employee action | ✅ None | ❌ Must walk up & scan | ✅ None (automatic) |
 | Tracks precise break duration | ❌ No | ❌ No | ✅ Yes, with auto-classification |
-| Setup effort | Low | High (hardware install) | Low (whitelist a BSSID) |
 
 ---
 
@@ -137,37 +128,25 @@ When a phone connects to a **trusted** BSSID, the app marks the employee **PRESE
 
 ## 🔄 Attendance State Machine
 
-The actual core logic — a real state machine with timed transitions, not a linear pipeline:
-
 ```mermaid
 stateDiagram-v2
-    [*] --> DISCONNECTED
-    DISCONNECTED --> VERIFYING: WiFi connects
-    VERIFYING --> PRESENT: BSSID in trusted list
-    VERIFYING --> NOT_VERIFIED: BSSID unknown
-
-    PRESENT --> SHORT_BREAK: disconnects
-    SHORT_BREAK --> PRESENT: reconnects < 10 min
-    SHORT_BREAK --> TEA_BREAK: still gone at 10 min
-
-    TEA_BREAK --> PRESENT: reconnects < 20 min
-    TEA_BREAK --> LUNCH_BREAK: still gone at 20 min
-
-    LUNCH_BREAK --> PRESENT: reconnects < 60 min
-    LUNCH_BREAK --> AWAY: still gone at 60 min
-
-    AWAY --> [*]: session ends, logged
-
-    NOT_VERIFIED --> DISCONNECTED: WiFi drops
-    NOT_VERIFIED --> PRESENT: connects to trusted router
-
-    note right of AWAY
-        Session data flushed
-        to Railway backend
-    end note
+  [*] --> DISCONNECTED
+  DISCONNECTED --> VERIFYING: WiFi connects
+  VERIFYING --> PRESENT: BSSID in trusted list
+  VERIFYING --> NOT_VERIFIED: BSSID unknown
+  PRESENT --> SHORT_BREAK: disconnects
+  SHORT_BREAK --> PRESENT: reconnects < 10 min
+  SHORT_BREAK --> TEA_BREAK: still gone at 10 min
+  TEA_BREAK --> PRESENT: reconnects < 20 min
+  TEA_BREAK --> LUNCH_BREAK: still gone at 20 min
+  LUNCH_BREAK --> PRESENT: reconnects < 60 min
+  LUNCH_BREAK --> AWAY: still gone at 60 min
+  AWAY --> [*]: session ends, logged
+  NOT_VERIFIED --> DISCONNECTED: WiFi drops
+  NOT_VERIFIED --> PRESENT: connects to trusted router
 ```
 
-Every transition is timestamped and pushed to the backend, so an admin's report isn't just "present/absent" — it's a full timeline of connect/disconnect events per employee, per day.
+Every transition is timestamped and pushed to the backend — an admin's report is a full timeline of connect/disconnect events per employee, per day.
 
 ---
 
@@ -175,38 +154,22 @@ Every transition is timestamped and pushed to the backend, so an admin's report 
 
 ```mermaid
 sequenceDiagram
-    participant U as 📱 Employee App
-    participant A as 🔑 Auth Service
-    participant B as 🖥️ Backend API
-    participant S as 🔒 EncryptedStorage
+  participant U as 📱 Employee App
+  participant A as 🔑 Auth Service
+  participant B as 🖥️ Backend API
+  participant S as 🔒 EncryptedStorage
 
-    U->>A: Email + Password (or Phone OTP)
-    A->>B: POST /api/auth/login
-    B-->>A: JWT token
-    A->>S: Store token (encrypted)
-    A-->>U: Login success
-
-    Note over U,B: On every subsequent app launch
-    U->>S: Read stored JWT
-    S-->>U: Token found
-    U->>B: GET /api/auth/me (Bearer token)
-    B-->>U: User session restored — no re-login
+  U->>A: Email + Password (or Phone OTP)
+  A->>B: POST /api/auth/login
+  B-->>A: JWT token
+  A->>S: Store token (encrypted)
+  A-->>U: Login success
+  Note over U,B: On every subsequent app launch
+  U->>S: Read stored JWT
+  S-->>U: Token found
+  U->>B: GET /api/auth/me (Bearer token)
+  B-->>U: User session restored — no re-login
 ```
-
----
-
-## 🥧 Codebase Composition
-
-```mermaid
-pie showData
-    title Where the Code Lives (by component)
-    "Mobile — TS/TSX" : 55
-    "Backend — Node/Express" : 30
-    "Native — Kotlin" : 10
-    "Config & Tooling" : 5
-```
-
-<sub><i>Approximate split by component responsibility, not a precise LOC audit.</i></sub>
 
 ---
 
@@ -223,8 +186,8 @@ pie showData
 **Backend & Infra**
 
 ![Node.js](https://skillicons.dev/icons?i=nodejs)
-![Express](https://skillicons.dev/icons?i=express)
-![Railway](https://skillicons.dev/icons?i=railway)
+![JavaScript](https://skillicons.dev/icons?i=js)
+![Git](https://skillicons.dev/icons?i=git)
 
 </div>
 
@@ -284,8 +247,6 @@ pie showData
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:00C6FF,100:0F2027&height=4&width=100%25" width="100%"/>
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -323,6 +284,11 @@ export const API_BASE_URL = 'http://192.168.1.X:3000';
 ### Run
 
 ```bash
+# Bundle JS first (required for standalone APK)
+npx react-native bundle --platform android --dev false --entry-file index.js \
+  --bundle-output android/app/src/main/assets/index.android.bundle \
+  --assets-dest android/app/src/main/res
+
 # Start Metro bundler
 npx react-native start
 
@@ -330,7 +296,7 @@ npx react-native start
 npx react-native run-android
 ```
 
-### Build a debug APK
+### Build a standalone APK
 
 ```bash
 cd android
@@ -338,6 +304,8 @@ cd android
 ```
 
 📦 Output: `android/app/build/outputs/apk/debug/app-debug.apk`
+
+> ⬇️ Or just **[download the pre-built demo APK](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-debug.apk)** directly.
 
 ---
 
@@ -395,12 +363,12 @@ cd android
     │   │   └── seed.js               # Demo data seeder
     │   ├── middleware/auth.js        # JWT verification
     │   ├── routes/
-    │   │   ├── auth.js               # Login + OTP endpoints
-    │   │   ├── employees.js          # Employee CRUD
-    │   │   ├── attendance.js         # Attendance records
-    │   │   └── routers.js            # Trusted router management
+    │   │   ├── auth.js
+    │   │   ├── employees.js
+    │   │   ├── attendance.js
+    │   │   └── routers.js
     │   └── server.js
-    ├── db.json                       # Live database file
+    ├── db.json
     └── package.json
 ```
 
@@ -482,10 +450,10 @@ cd android
 | **BSSID spoofing** | Requires cloning a physical device's hardware MAC — far higher bar than renaming an SSID |
 | **Token theft** | JWTs live in `EncryptedStorage` (Android Keystore-backed), not plain AsyncStorage |
 | **Password storage** | Hashed with `bcryptjs`, never stored or logged in plaintext |
-| **Location permission scope** | Required by Android to read WiFi SSID/BSSID (OS policy since 8.1) — the app does **not** collect or transmit GPS coordinates |
+| **Location permission scope** | Required by Android to read WiFi SSID/BSSID — the app does **not** collect or transmit GPS coordinates |
 | **API authorization** | All non-auth routes require a valid Bearer JWT, verified server-side per request |
 
-> ⚠️ **Known gap:** the current demo backend uses a JSON file as its database (`db.json`) — fine for a prototype, but the [Roadmap](#️-roadmap) includes a PostgreSQL migration before any real production use.
+> ⚠️ **Known gap:** the current demo backend uses `db.json` as its database — fine for a prototype, but the [Roadmap](#️-roadmap) includes a PostgreSQL migration before production use.
 
 </div>
 
@@ -494,10 +462,12 @@ cd android
 ## 🌐 Deployment
 
 **Backend is live on Railway:**
+
 ```
 https://attendance-monitor-using-wifi-app-production.up.railway.app
 ```
-> ⚠️ Hosted on Railway's free trial — live and functional until the trial expires. Upgrade to the hobby plan ($5/mo) or self-host below to keep it running permanently.
+
+> ⚠️ Hosted on Railway's free trial — live and functional until the trial expires. Upgrade to the hobby plan ($5/mo) or self-host below.
 
 <details>
 <summary><b>🖥️ Self-host the backend</b></summary>
@@ -526,30 +496,26 @@ node src/server.js
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:FFB020,100:0F2027&height=4&width=100%25" width="100%"/>
-
 ## 🗺️ Roadmap
 
 ```mermaid
 gantt
-    title WiFi Track — Planned Milestones
-    dateFormat  YYYY-MM-DD
-    axisFormat  %b
-    section Auth & Alerts
+  title WiFi Track — Planned Milestones
+  dateFormat  YYYY-MM-DD
+  axisFormat  %b
+  section Auth & Alerts
     Real SMS OTP (Twilio/Fast2SMS)      :a1, 2026-08-01, 20d
     Push notifications for AWAY status  :a2, after a1, 15d
-    section Admin Experience
+  section Admin Experience
     Live admin dashboard                :b1, 2026-08-15, 25d
     Multi-location support              :b2, after b1, 20d
-    section Platform Hardening
+  section Platform Hardening
     Geofencing (secondary verification) :c1, 2026-09-10, 15d
     PostgreSQL migration                :c2, after c1, 20d
     iOS support                         :c3, after c2, 30d
-    section Reporting
+  section Reporting
     Monthly PDF export                  :d1, 2026-09-25, 15d
 ```
-
-<sub><i>Illustrative timeline for planning purposes — not committed dates.</i></sub>
 
 ---
 
@@ -591,11 +557,17 @@ The 3-second poll only reads already-cached WiFi state via the native Kotlin mod
 
 ## 📄 License
 
-(https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/blob/main/LICENSE)
+**© 2026 Vedaansh Gupta — All Rights Reserved**
+
+This software is the exclusive intellectual property of Vedaansh Gupta. Commercial use, redistribution, or modification without prior written permission is strictly prohibited.
+
+For licensing inquiries: **vedaanshgupta0405@gmail.com** · [github.com/vedcr7](https://github.com/vedcr7)
+
+See the full [LICENSE](./LICENSE) file for legal terms.
+
+---
 
 <div align="center">
-
-<br/>
 
 **Built with ❤️ using React Native + Kotlin + Node.js**
 
