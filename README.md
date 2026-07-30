@@ -41,7 +41,9 @@
 
 ⚠️ *Running on Railway's free trial — self-host anytime using the guide below.*
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=vedcr7&repo=Attendance-Monitor-Using-Wifi-App&theme=tokyonight&hide_border=true&bg_color=0F2027&title_color=00C6FF&text_color=c9d1d9&icon_color=00C6FF" alt="repo card"/>
+![GitHub repo size](https://img.shields.io/github/repo-size/vedcr7/Attendance-Monitor-Using-Wifi-App?color=00C6FF&style=flat-square)
+![GitHub code size](https://img.shields.io/github/languages/code-size/vedcr7/Attendance-Monitor-Using-Wifi-App?color=7F52FF&style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/vedcr7/Attendance-Monitor-Using-Wifi-App?color=61DAFB&style=flat-square)
 
 </div>
 
