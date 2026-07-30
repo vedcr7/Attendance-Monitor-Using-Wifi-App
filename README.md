@@ -591,7 +591,7 @@ The 3-second poll only reads already-cached WiFi state via the native Kotlin mod
 
 ## 📄 License
 
-MIT License — free to use, modify, and distribute.
+(https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/blob/main/LICENSE)
 
 <div align="center">
 
