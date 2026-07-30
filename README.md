@@ -14,6 +14,8 @@
 [![Railway](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](./LICENSE)
 
+[![Download APK](https://img.shields.io/badge/⬇️_Download-Demo_APK_v1.0-brightgreen?style=for-the-badge&logo=android&logoColor=white)](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-debug.apk)
+
 <img src="https://img.shields.io/github/stars/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="stars"/>
 <img src="https://img.shields.io/github/forks/vedcr7/Attendance-Monitor-Using-Wifi-App?style=social" alt="forks"/>
 <img src="https://img.shields.io/github/last-commit/vedcr7/Attendance-Monitor-Using-Wifi-App?color=00C6FF&style=flat-square" alt="last commit"/>
