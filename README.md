@@ -10,10 +10,10 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-Native_Module-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
-[![Railway](https://img.shields.io/badge/Deployed_on-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
+[![Render](https://img.shields.io/badge/Deployed_on-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com/)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg?style=for-the-badge)](./LICENSE)
 
-[![Download APK](https://img.shields.io/badge/⬇️_Download-Demo_APK_v1.0-brightgreen?style=for-the-badge&logo=android&logoColor=white)](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-debug.apk)
+[![Download APK](https://img.shields.io/badge/⬇️_Download-Demo_APK_v1.1-brightgreen?style=for-the-badge&logo=android&logoColor=white)](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-release.apk)
 
 <br/>
 
@@ -36,10 +36,10 @@
 | | |
 |---|---|
 | **Status** | ![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square) |
-| **Base URL** | `attendance-monitor-using-wifi-app-production.up.railway.app` |
-| **Health Check** | [`/health`](https://attendance-monitor-using-wifi-app-production.up.railway.app/health) |
+| **Base URL** | `attendance-monitor-using-wifi-app.onrender.com` |
+| **Health Check** | [`/health`](https://attendance-monitor-using-wifi-app.onrender.com/health) |
 
-⚠️ *Running on Railway's free trial — self-host anytime using the guide below.*
+⚠️ *Running on Render's free tier — spins down after 15 min idle, first request may take ~30s to wake up.*
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/vedcr7/Attendance-Monitor-Using-Wifi-App?color=00C6FF&style=flat-square)
 ![GitHub code size](https://img.shields.io/github/languages/code-size/vedcr7/Attendance-Monitor-Using-Wifi-App?color=7F52FF&style=flat-square)
@@ -273,8 +273,8 @@ npm install
 Open `src/services/apiClient.ts`:
 
 ```ts
-// Live Railway backend (works immediately):
-export const API_BASE_URL = 'https://attendance-monitor-using-wifi-app-production.up.railway.app';
+// Live Render backend (works immediately):
+export const API_BASE_URL = 'https://attendance-monitor-using-wifi-app.onrender.com';
 
 // Local dev (emulator):
 export const API_BASE_URL = 'http://10.0.2.2:3000';
@@ -302,12 +302,12 @@ npx react-native run-android
 
 ```bash
 cd android
-.\gradlew.bat assembleDebug
+.\gradlew.bat assembleRelease
 ```
 
-📦 Output: `android/app/build/outputs/apk/debug/app-debug.apk`
+📦 Output: `android/app/build/outputs/apk/release/app-release.apk`
 
-> ⬇️ Or just **[download the pre-built demo APK](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-debug.apk)** directly.
+> ⬇️ Or just **[download the pre-built demo APK](https://github.com/vedcr7/Attendance-Monitor-Using-Wifi-App/releases/latest/download/app-release.apk)** directly.
 
 ---
 
@@ -463,13 +463,13 @@ cd android
 
 ## 🌐 Deployment
 
-**Backend is live on Railway:**
+**Backend is live on Render:**
 
 ```
-https://attendance-monitor-using-wifi-app-production.up.railway.app
+https://attendance-monitor-using-wifi-app.onrender.com
 ```
 
-> ⚠️ Hosted on Railway's free trial — live and functional until the trial expires. Upgrade to the hobby plan ($5/mo) or self-host below.
+> ⚠️ Hosted on Render's free tier — spins down after 15 min of inactivity. First request after idle takes ~30s to wake up. Upgrade to a paid plan or self-host below for always-on availability.
 
 <details>
 <summary><b>🖥️ Self-host the backend</b></summary>
@@ -484,15 +484,19 @@ node src/server.js
 </details>
 
 <details>
-<summary><b>🚂 Deploy your own Railway instance</b></summary>
+<summary><b>🚀 Deploy your own Render instance</b></summary>
 
 1. Fork this repository
-2. Go to [railway.app](https://railway.app) → New Project → Deploy from GitHub
-3. Select your fork → deploy
-4. Add environment variable: `JWT_SECRET=your_secret_key`
-5. Generate a public domain in Settings → Networking
-6. Update `src/services/apiClient.ts` with your new URL
-7. Rebuild the APK
+2. Go to [render.com](https://render.com) → New → Web Service
+3. Connect your forked repo
+4. Set **Root Directory** to `backend`
+5. **Build Command:** `npm install`
+6. **Start Command:** `node src/server.js`
+7. **Instance Type:** Free
+8. Add environment variable: `JWT_SECRET=your_secret_key`
+9. Deploy → copy the generated URL
+10. Update `src/services/apiClient.ts` with your new URL
+11. Rebuild the APK
 
 </details>
 

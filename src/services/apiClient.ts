@@ -15,7 +15,7 @@ import EncryptedStorage from 'react-native-encrypted-storage';
 // ── Change this to your PC's local IP address ─────────────────────────────
 // Physical device: use your PC's WiFi IP (e.g. 'http://192.168.1.5:3000')
 // Emulator:        use 'http://10.0.2.2:3000'
-export const API_BASE_URL = 'https://attendance-monitor-using-wifi-app-production.up.railway.app';
+export const API_BASE_URL = 'https://attendance-monitor-using-wifi-app.onrender.com';
 // ─────────────────────────────────────────────────────────────────────────
 
 const apiClient = axios.create({
